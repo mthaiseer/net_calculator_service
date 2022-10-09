@@ -27,8 +27,12 @@ Application for calculating net price of a product based on the price and tax ra
 - run `mvn clean install`
 - run `mvn spring-boot:run`
 - open `http://localhost:8080/swagger-ui.html` in browser
+![img_4.png](img_4.png)
 - use `POST http://localhost:8080/v1/net-price` endpoint to calculate net price
+![img_1.png](img_1.png)
 - use `GET http://localhost:8080/v1/tax-rate/{country_ISO}` endpoint to get tax rate
+![img_3.png](img_3.png)
+![img_2.png](img_2.png)
 
 ## assumptions
 - tax rate is fixed for each country
