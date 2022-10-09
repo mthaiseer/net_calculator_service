@@ -7,6 +7,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+/**
+ * This service is used to calculate net price
+ */
 @Service
 public class NetPriceService {
 
@@ -15,6 +18,13 @@ public class NetPriceService {
 
     Logger logger = LoggerFactory.getLogger(NetPriceService.class);
 
+    /**
+     * This method is used to calculate net price
+     * @param grossPrice
+     * @param countryIso
+     * @return
+     * @throws RateNotFoundException
+     */
     public double calculateNetPrice(double grossPrice, String countryISO) throws RateNotFoundException {
 
         TaxRate taxRate = taxRateProvider.getTaxRate(countryISO);

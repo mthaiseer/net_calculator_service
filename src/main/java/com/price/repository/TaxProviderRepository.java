@@ -5,6 +5,9 @@ import com.price.vo.TaxRate;
 import org.springframework.stereotype.Repository;
 import java.util.Map;
 
+/**
+ * This repository is used to get tax rate
+ */
 @Repository
 public class TaxProviderRepository {
 
@@ -16,6 +19,12 @@ public class TaxProviderRepository {
             "PL", 0.23
     );
 
+    /**
+     * This method is used to get tax rate
+     * @param countryIso
+     * @return
+     * @throws RateNotFoundException
+     */
     public TaxRate getTaxRate(String countryISO) throws RateNotFoundException {
 
         if(!taxRateMap.containsKey(countryISO)){

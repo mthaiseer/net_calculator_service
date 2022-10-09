@@ -12,6 +12,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * This controller is used to get tax rate
+ */
 @RestController
 @RequestMapping("/v1/tax-rate")
 public class TaxRateController {
@@ -22,6 +25,12 @@ public class TaxRateController {
 
     Logger logger = LoggerFactory.getLogger(TaxRateController.class);
 
+    /**
+     * This method is used to get tax rate
+     * @param countryIso
+     * @return
+     * @throws RateNotFoundException
+     */
     @GetMapping("/{isoCountryCode}")
     public ResponseEntity<TaxRateResponse> getTaxRate(@PathVariable("isoCountryCode") String isoCountryCode) {
 

@@ -12,6 +12,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ *
+ */
 @RestController
 @RequestMapping("/v1/tax-rate")
 public class NetPriceController {
@@ -19,6 +22,12 @@ public class NetPriceController {
     @Autowired
     private  NetPriceService netPriceService;
 
+    /**
+     * This method is used to calculate net price
+     * @param netPriceRequest
+     * @return
+     * @throws RateNotFoundException
+     */
     @PostMapping
     public ResponseEntity<NetPaymentResponse> getNetPrice(@Validated  @RequestBody NetPriceRequest netPriceRequest) throws RateNotFoundException {
         Double netPrice =   netPriceService
